@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renove | Registrar</title>
+
+  <!-- Bootstrap + ícones -->
+  <link rel="icon" href="images/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    /* Container que alinha as colunas */
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Estilo padrão para cada coluna */
+    .footer-coluna {
+      flex: 1;
+      /* Tenta dar o mesmo espaço para cada coluna */
+      min-width: 200px;
+      /* Largura mínima antes de quebrar a linha */
+    }
+
+    /* Estilo dos títulos das colunas */
+    .footer-coluna h4 {
+      color: var(--cor-texto);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    /* Linha decorativa abaixo dos títulos */
+    .footer-coluna h4::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 30px;
+      height: 2px;
+      background-color: var(--cor-primaria);
+    }
+
+    /* Estilo das listas de links */
+    .footer-coluna ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-coluna ul li {
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-coluna ul li a {
+      color: inherit;
+      /* Herda a cor cinza do footer */
+      text-decoration: none;
+      transition: color 0.2s ease, padding-left 0.2s ease;
+    }
+
+    .footer-coluna ul li a:hover {
+      color: #2c3e50;
+      padding-left: 5px;
+    }
+
+    /* Estilos específicos da coluna do logo */
+    #footer-logo-col {
+      flex-basis: 250px;
+      /* Define uma base de largura maior */
+      flex-grow: 2;
+    }
+
+    .footer-logo {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-slogan {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    /* Estilos dos ícones de redes sociais */
+    .footer-social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-social-links a {
+      display: inline-block;
+      color: var(--cor-texto-secundario, #888);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .footer-social-links a:hover {
+      transform: translateY(-3px);
+      color: var(--cor-primaria);
+    }
+
+    .footer-social-links svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Barra inferior do copyright */
+    .footer-bottom-bar {
+      text-align: center;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      border-top: 1px solid var(--sombra, rgba(0, 0, 0, 0.1));
+      font-size: 0.85rem;
+    }
+
+    .footer-bottom-bar a {
+      color: var(--cor-primaria);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .footer-bottom-bar a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        /* Empilha as colunas */
+        align-items: flex-start;
+        /* Alinha no início */
+        text-align: left;
+      }
+
+      .footer-coluna {
+        min-width: 100%;
+        margin-bottom: 2rem;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 2rem 1rem;
+        text-align: center;
+        flex-direction: column;
+      }
+
+      .hero-text {
+        max-width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body style="margin-bottom: 0;">
+
+  <!-- Navbar importada -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img class="images" src="images/logotipo.png" alt="Logotipo-Dark">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="produtos.html">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="registrar.html">Registrar</a> <!-- Apenas esse ativo -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Formulário de Login   -->
+  <form class="container border rounded shadow p-5 mt-5"
+    style="display: flex; flex-direction: column; max-width: 500px; width: 100%;">
+
+    <img src="images/logo.png" class="rounded mx-auto d-block" alt="Logo" style="width: 150px; height: 150px;">
+    <div class="top-text">
+      <p class="text-center mt-3">Bem vindo(a) à <strong>Renove - Farmácia de cosméticos</strong></p>
+      <h3 class="text-center mt-4">Login</h3>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" required>
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Lembrar senha</label>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+      <p class="mt-5 mb-3 text-center">Não possui uma conta? <strong><a href="registrar.html"
+            class="text-primary font-weight-bold">Registrar</a></strong></p>
+    </div>
+  </form>
+
+  <footer class="footer-techmode">
+    <div class="footer-container">
+
+      <div class="footer-coluna" id="footer-logo-col">
+        <img src="images/logo.png" alt="Logo Tech Mode" class="footer-logo">
+        <p class="footer-slogan">Inovação e tecnologia ao seu alcance.</p>
+      </div>
+
+      <div class="footer-coluna">
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">Carreiras</a></li>
+          <li><a href="#">Imprensa</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-coluna">
+        <h4>Suporte</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Central de Ajuda</a></li>
+          <li><a href="#">Termos de Serviço</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-coluna">
+        <h4>Siga-nos</h4>
+        <div class="footer-social-links">
+          <a href="#" aria-label="Facebook" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+            </svg></a>
+          <a href="#" aria-label="Instagram" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.359 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.359-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.359-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" />
+            </svg></a>
+          <a href="#" aria-label="Twitter" title="Twitter (X)"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+              height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.617l-5.21-6.817-6.044 6.817h-3.308l7.732-8.734-8.232-10.76h6.802l4.555 6.031 5.527-6.031zm-1.4 17.52h2.16l-9.309-12.48h-2.28l9.429 12.48z" />
+            </svg></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p>&copy; 2025 Tech Mode. Todos os direitos reservados. Desenvolvido por <a
+          href="https://luizote1.github.io/tech-mode/" target="_blank" rel="noopener noreferrer">Tech Mode</a>.</p>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/theme-manager.js"></script>
+</body>
+
+</html>
